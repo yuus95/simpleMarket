@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 public class Member extends baseEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(length = 25, nullable = false)
