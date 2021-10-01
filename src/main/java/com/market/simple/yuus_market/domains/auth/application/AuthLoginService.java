@@ -51,13 +51,12 @@ public class AuthLoginService {
         //     인증에 성공하면 Authentication을 SecurityContextHolder에 저장할 수 있는 객체로 만들어진다.
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
 
-
         // 3. 인증 정보를 기반으로 JWT 토큰 생성
         TokenDto tokenDto = tokenProvider.generateTokenDto(authentication);
 
         // 4. RefreshToken 저장
         AuthToken authToken = AuthToken.builder()
-                .idKey(loginDto.getUserId())
+                .idKey(authentication.getName())
                 .value(tokenDto.getRefreshToken())
                 .build();
 
