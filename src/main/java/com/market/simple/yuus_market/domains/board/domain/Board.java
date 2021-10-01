@@ -24,7 +24,7 @@ public class Board extends baseEntity {
 
     private String location;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private BoardStatus boardStatus;
 
 }
