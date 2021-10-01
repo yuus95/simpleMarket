@@ -13,7 +13,7 @@ import org.springframework.validation.BindingResult;
 @Aspect
 public class ValidationAdvice {
 
-    @Around("execution(* com.yushin.web.controller.*Controller.*(..))")
+    @Around("execution(* com.market.simple.yuus_market.domains..*(..))")
     public Object apiAdvice(ProceedingJoinPoint proceedingJoinPoint) throws Throwable{
         Object[] args = proceedingJoinPoint.getArgs();
         for (Object arg : args) {
