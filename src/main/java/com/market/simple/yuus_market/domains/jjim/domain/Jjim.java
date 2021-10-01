@@ -21,7 +21,7 @@ public class Jjim extends baseEntity {
     @JoinColumn(name = "user_id")
     private Member member;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "board_id")
     private Board board;
 
