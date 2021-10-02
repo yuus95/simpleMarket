@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface PhotoRepository extends JpaRepository<Photo,Long> {
 
-   List<Photo> findAllbyBoardId(Long boardId);
+   List<Photo> findAllByBoardId(Long boardId);
 
 }
