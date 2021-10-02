@@ -1,6 +1,7 @@
 package com.market.simple.yuus_market.domains.board.domain;
 
 import com.market.simple.yuus_market.domains.baseEntity;
+import com.market.simple.yuus_market.domains.comment.domain.Comment;
 import com.market.simple.yuus_market.domains.member.domain.Member;
 import com.market.simple.yuus_market.domains.photo.domain.Photo;
 import lombok.Builder;
@@ -34,6 +35,10 @@ public class Board extends baseEntity {
 
     @Enumerated(EnumType.STRING)
     private BoardStatus boardStatus;
+
+
+    @OneToMany(mappedBy = "board",cascade = CascadeType.ALL)
+    private List<Comment> commentList = new ArrayList<>();
 
     @Builder
     public Board(Member member,String title,String content,String location){

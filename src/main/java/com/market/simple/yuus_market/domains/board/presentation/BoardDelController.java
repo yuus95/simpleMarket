@@ -17,7 +17,6 @@ public class BoardDelController {
 
     @DeleteMapping("/api/board")
     public ResponseEntity DeleteBoard(@RequestParam("userIdx") Long userIdx, @RequestParam("boardIdx") Long boardIdx){
-        System.out.println("userIdx" + userIdx);
         if( userIdx == 0 || boardIdx == 0 ){
             new CustomException(ErrorCode.CANNOT_PROVIDER);
         }

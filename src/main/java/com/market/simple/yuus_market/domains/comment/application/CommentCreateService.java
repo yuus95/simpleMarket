@@ -12,6 +12,7 @@ import com.market.simple.yuus_market.domains.member.domain.Member;
 import com.market.simple.yuus_market.domains.member.domain.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @RequiredArgsConstructor
 @Service
@@ -20,6 +21,7 @@ public class CommentCreateService {
     private final BoardRepository boardRepository;
     private final MemberRepository memberRepository;
 
+    @Transactional
     public void CommentCreate(CommentCreateReqeust commentCreateReqeust) {
         Long boardIdx = commentCreateReqeust.getBoardIdx();
         Board board = boardRepository.findById(boardIdx).orElseThrow(() -> new CustomException(ErrorCode.CANNOT_FIND_BOARD));
