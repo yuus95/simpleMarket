@@ -41,6 +41,8 @@ public enum ErrorCode {
     NOT_MATCHED_EMAIL(NOT_FOUND,"이메일을 확인해주세요"),
     NOT_MATCHED_ID(NOT_FOUND,"아이디를 확인해주세요"),
     CANNOT_FIND_ACCOUNT(NOT_FOUND,"해당 계좌를 등록하지 않았습니다."),
+    CANNOT_FIND_BOARD(NOT_FOUND,"해당 계좌를 등록하지 않았습니다."),
+
 
 
 
