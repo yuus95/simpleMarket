@@ -23,19 +23,15 @@ public class CommentCreateService {
     public void CommentCreate(CommentCreateReqeust commentCreateReqeust) {
         Long boardIdx = commentCreateReqeust.getBoardIdx();
         Board board = boardRepository.findById(boardIdx).orElseThrow(() -> new CustomException(ErrorCode.CANNOT_FIND_BOARD));
-        Comment byId = null;
         Long userIdx = commentCreateReqeust.getUserIdx();
         Member member = memberRepository.findById(userIdx).orElseThrow(() -> new CustomException(ErrorCode.NOT_MATCHED_ID));
-        if (commentCreateReqeust.getCommentOwner() != 0 ){
-            byId = commentRepository.findById(commentCreateReqeust.getCommentOwner()).get();
-        }
+
 
 
         Comment build = Comment.builder()
                 .content(commentCreateReqeust.getContent())
                 .board(board)
                 .member(member)
-                .commentOwner(byId)
                 .commentStatus(CommentStatus.POSTING)
                 .build();
 

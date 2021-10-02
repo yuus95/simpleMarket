@@ -6,7 +6,6 @@ import lombok.Getter;
 public class CommentCreateReqeust {
     private Long userIdx;
     private Long boardIdx;
-    private Long commentOwner;
     private String content;
 
 }

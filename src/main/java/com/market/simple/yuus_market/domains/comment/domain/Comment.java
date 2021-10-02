@@ -3,6 +3,7 @@ package com.market.simple.yuus_market.domains.comment.domain;
 import com.market.simple.yuus_market.domains.baseEntity;
 import com.market.simple.yuus_market.domains.board.domain.Board;
 import com.market.simple.yuus_market.domains.member.domain.Member;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -27,9 +28,20 @@ public class Comment extends baseEntity {
     @JoinColumn(name = "user_id")
     private Member member;
 
-    private Long commentOwner;
 
     @Enumerated(EnumType.STRING)
     private CommentStatus commentStatus;
 
+
+    @Builder
+    public Comment(String content,Board board,Member member,CommentStatus commentStatus){
+        this.content= content;
+        this.board= board;
+        this.member= member;
+        this.commentStatus = commentStatus;
+    }
+
+    public void Update(String content){
+        this.content = content;
+    }
 }
