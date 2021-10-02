@@ -50,11 +50,18 @@ public class Board extends baseEntity {
         this.location = location;
     }
 
+    public void updateStatus(BoardStatus boardStatus){
+        this.boardStatus =boardStatus;
+    }
+
+
     public void addPhoto(Photo photo){
         this.photo.add(photo);
         if(photo.getBoard() != this){
             photo.setBoard(this);
         }
     }
+
+
 
 }

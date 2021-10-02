@@ -8,6 +8,7 @@ import com.market.simple.yuus_market.domains.photo.application.PhotoDeleteServic
 import com.market.simple.yuus_market.domains.photo.application.PhotoFindService;
 import com.market.simple.yuus_market.domains.photo.domain.Photo;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -28,7 +29,7 @@ public class BoardUpdateController {
 
 
     @PutMapping("/board/{boardId}")
-    public void update(@PathVariable Long boardId, @RequestBody BoardUpdateRequest boardUpdateRequest) throws Exception {
+    public ResponseEntity update(@PathVariable Long boardId, @RequestBody BoardUpdateRequest boardUpdateRequest) throws Exception {
 
         boardFindService.findByBoardWithId(boardId, boardUpdateRequest.getUserIdx());
 
@@ -78,5 +79,6 @@ public class BoardUpdateController {
         }
         BoardUpdateDto fromBoardUpdateDto = BoardUpdateDto.from(boardUpdateRequest);
         boardUpdateService.update(boardId, fromBoardUpdateDto, addFileList);
+        return ResponseEntity.ok().build();
     }
 }
