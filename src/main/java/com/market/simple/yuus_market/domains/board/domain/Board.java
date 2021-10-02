@@ -44,9 +44,10 @@ public class Board extends baseEntity {
         this.boardStatus=BoardStatus.POSTING;
     }
 
-    public void update(String title,String content){
+    public void update(String title,String content,String location){
         this.title=title;
         this.content=content;
+        this.location = location;
     }
 
     public void addPhoto(Photo photo){
