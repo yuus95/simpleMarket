@@ -18,9 +18,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class FileHandler {
 
-    private final PhotoService photoService;
-
-
     public List<Photo> parseFileInfo(
             List<MultipartFile> multipartFiles
     )throws Exception {
