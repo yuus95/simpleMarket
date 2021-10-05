@@ -29,7 +29,6 @@ public class BoardPostService {
             BoardPostRequest boardPostRequest
     ) throws Exception {
         // 파일 처리를 위한 Board 객체 생성
-        System.out.println("boardPostRequest" + boardPostRequest.getUserId());
         Member member = memberRepository.findByUserId(boardPostRequest.getUserId()).orElseThrow(() -> new CustomException(ErrorCode.MEMBER_NOT_FOUND));
 
 
