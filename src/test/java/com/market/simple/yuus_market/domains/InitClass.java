@@ -2,6 +2,8 @@ package com.market.simple.yuus_market.domains;
 
 import com.market.simple.yuus_market.domains.board.Application.dto.BoardPostRequest;
 import com.market.simple.yuus_market.domains.board.domain.Board;
+import com.market.simple.yuus_market.domains.jjim.domain.Jjim;
+import com.market.simple.yuus_market.domains.jjim.domain.JjimStatus;
 import com.market.simple.yuus_market.domains.member.domain.AuthProvider;
 import com.market.simple.yuus_market.domains.member.domain.Authority;
 import com.market.simple.yuus_market.domains.member.domain.Member;
@@ -30,5 +32,13 @@ public class InitClass {
                 boardPostRequest.getLocation()
         );
         return board;
+    }
+
+    public static Jjim initJjim(Board board,Member member){
+       return Jjim.builder()
+                .board(board)
+                .member(member)
+                .jjimStatus(JjimStatus.JJIM)
+                .build();
     }
 }
