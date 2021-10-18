@@ -61,11 +61,13 @@ class JjimRegisterServiceTest {
         jjimRegisterRequest.setUserIdx(member.getId());
         jjimRegisterRequest.setBoardIdx(board.getId());
 
-        Mockito.when(jjimRepository.findByMemberIdAndBoardId(member.getId(),board.getId())).thenReturn(Optional.of(null));
+        Mockito.when(jjimRepository.findByMemberIdAndBoardId(member.getId(),board.getId())).thenReturn(Optional.ofNullable(null));
+        Mockito.when(memberRepository.findById(Mockito.any())).thenReturn(Optional.of(member));
+        Mockito.when(boardRepository.findById(Mockito.any())).thenReturn(Optional.of(board));
         //when
         jjimRegisterService.jjimRegister(jjimRegisterRequest);
         //then
-        Mockito.verify(jjimRepository.save(Mockito.any()));
+        Mockito.verify(jjimRepository).save(Mockito.any(Jjim.class));
 
     }
 }
