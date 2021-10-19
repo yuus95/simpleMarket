@@ -1,6 +1,6 @@
 package com.market.simple.yuus_market.domains.jjim.domain;
 
-import com.market.simple.yuus_market.domains.baseEntity;
+import com.market.simple.yuus_market.domains.BaseEntity;
 import com.market.simple.yuus_market.domains.board.domain.Board;
 import com.market.simple.yuus_market.domains.member.domain.Member;
 import lombok.Builder;
@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @Getter
-public class Jjim extends baseEntity {
+public class Jjim extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

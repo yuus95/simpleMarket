@@ -1,6 +1,6 @@
 package com.market.simple.yuus_market.domains.board.domain;
 
-import com.market.simple.yuus_market.domains.baseEntity;
+import com.market.simple.yuus_market.domains.BaseEntity;
 import com.market.simple.yuus_market.domains.comment.domain.Comment;
 import com.market.simple.yuus_market.domains.member.domain.Member;
 import com.market.simple.yuus_market.domains.photo.domain.Photo;
@@ -16,7 +16,7 @@ import java.util.List;
 @Getter
 @Entity
 @Table(name = "boards")
-public class Board extends baseEntity {
+public class Board extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

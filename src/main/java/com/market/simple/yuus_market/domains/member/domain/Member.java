@@ -1,7 +1,7 @@
 package com.market.simple.yuus_market.domains.member.domain;
 
 
-import com.market.simple.yuus_market.domains.baseEntity;
+import com.market.simple.yuus_market.domains.BaseEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @Getter
 @Entity
-public class Member extends baseEntity {
+public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
