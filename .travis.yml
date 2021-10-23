@@ -10,10 +10,10 @@ cache:
   - "$HOME/.gradle"
 script: "./gradlew clean build"
 
-#before_install:
-#  - openssl aes-256-cbc -K $encrypted_dd868b5a6e58_key -iv $encrypted_dd868b5a6e58_iv
-#  -in application-dev.yml.enc -out application-dev.yml -d
-#  - chmod +x gradlew
+before_install:
+  - openssl aes-256-cbc -K $encrypted_dd868b5a6e58_key -iv $encrypted_dd868b5a6e58_iv
+  -in application-dev.yml.enc -out application-dev.yml -d
+  - chmod +x gradlew
 
 
 notifications:
