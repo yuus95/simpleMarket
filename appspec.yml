@@ -9,9 +9,10 @@ permissions:
     pattern: "**"
     owner: ec2-user
     group: ec2-user
+    mode: 777
 
 hooks:
   AfterInstall:
     # EC2경로가 아니라 배포할 소스 코드에 shell script가 있어야 함에 유의!!
     - location: script/deploy.sh
-      runas: root
+      runas: ec2-user
