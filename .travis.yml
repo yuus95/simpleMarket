@@ -24,6 +24,7 @@ before_deploy:
   - mv springboot-test.zip deploy/springboot-test.zip
 
 deploy:
+  #s3설정
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY
@@ -34,6 +35,20 @@ deploy:
     acl: private # zip 파일 접근을 private으로
     local_dir: deploy # before_deploy에서 생성한 디렉토리로 이동한다. 해당 위치의 파일만 이동시킨다.
     wait-unil-deployed: true
+    on:
+      branch: main
+
+##  codedeploy설정
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: yushin09
+    key: yushin.zip
+    bundle_type: zip
+    application: ec2-codedeploy #aws code_deploy 애플리케이션 이름
+    deployment_group: code-deploy # code_deploy 의 배포그룹
+    region: ap-northeast-2
+    wait-until-deployed: true
     on:
       branch: main
 
