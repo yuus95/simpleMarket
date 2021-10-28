@@ -4,6 +4,8 @@ files:
   - source: /
     destination: /home/git/simpleMarket
     overwrite: yes
+
+# deploy 이후 권한설정을 할 수 있다.
 permissions:
   - object: /
     pattern: "**"
