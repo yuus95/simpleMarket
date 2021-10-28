@@ -45,7 +45,7 @@ deploy:
     bucket: yushin09
     key: yushin.zip
     bundle_type: zip
-    application: ec2-codedeploy #aws code_deploy 애플리케이션 이름
+    application: ec2-codedeploy # aws code_deploy 애플리케이션 이름
     deployment_group: code-deploy # code_deploy 의 배포그룹
     region: ap-northeast-2
     wait-until-deployed: true
