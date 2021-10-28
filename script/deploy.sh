@@ -1,6 +1,6 @@
 #/bin/bash
 
-REPOSITORY=/home/git/
+REPOSITORY=/home/git
 PROJECT_NAME=simpleMarket
 
 cd $REPOSITORY/$PROJECT_NAME/
