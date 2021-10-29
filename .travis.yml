@@ -24,8 +24,6 @@ before_deploy:
   - cd ../ && mkdir -p deploy
   - mv before-deploy/before-deploy.zip deploy/springboot-test.zip # deploy 폴더로 이동
 
-  # 생성한 .zip 파일을 deploy 아래로 이동한다
-  - mv springboot-test.zip deploy/springboot-test.zip
 
 deploy:
   #s3설정
