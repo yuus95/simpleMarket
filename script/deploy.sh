@@ -5,14 +5,8 @@ PROJECT_NAME=simpleMarket
 
 cd $REPOSITORY/$PROJECT_NAME/
 
-echo ">> git pull"
-git pull
-
 echo ">> yml 파일 resources폴더로  이동"
 cp $REPOSITORY/$PROJECT_NAME/application-dev.yml $REPOSITORY/$PROJECT_NAME/src/main/resources
-
-echo ">>프로젝트 build 시작"
-./gradlew build
 
 echo ">>Build 파일복사"
 cp $REPOSITORY/$PROJECT_NAME/build/libs/*.jar $REPOSITORY/dep
@@ -40,4 +34,7 @@ JAR_NAME=$(ls -tr $REPOSITORY/dep/ | grep jar | tail -n 1)
 
 # 백그라운드 프로세스를 활용하여 실행
 echo ">> JAR NAME : $JAR_NAME"
+echo ">> Jar 권한 변경"
+chmod +x $JAR_NAME
+
 nohup java -jar $REPOSITORY/dep/$JAR_NAME >$REPOSITORY/dep/nohup.out 2>&1 &
