@@ -5,8 +5,6 @@ PROJECT_NAME=simpleMarket
 
 cd $REPOSITORY/$PROJECT_NAME/
 
-echo ">> yml 파일 resources폴더로  이동"
-cp $REPOSITORY/$PROJECT_NAME/application-dev.yml $REPOSITORY/$PROJECT_NAME/src/main/resources
 
 echo ">>Build 파일복사"
 cp $REPOSITORY/$PROJECT_NAME/build/libs/*.jar $REPOSITORY/dep
