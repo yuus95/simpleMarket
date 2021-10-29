@@ -17,10 +17,9 @@ before_install:
 # Travis Ci는 S3로 특정 파일만 업로드가 안된다. 디렉토리 단위로 업로드 가능
 before_deploy:
   # 현재 위치의 모든 파일을 springboot-test 압축한다.
-  - zip -r springboot-test *
 
   - mkdir -p before-deploy # zip에 포함시킬 파일들을 담을 디렉토리 생성
-  - cp script*.sh before-deploy # 배포 스크립트 이동
+  - cp script/*.sh before-deploy # 배포 스크립트 이동
   - cp appspec.yml before-deploy # codedeploy파일 이동
   - cd before-deploy && zip -r before-deploy.zip # zip 으로 압축
   - cd ../ && mkdir -p deploy
