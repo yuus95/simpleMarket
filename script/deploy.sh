@@ -1,4 +1,4 @@
-#/bin/bash
+#!/usr/bin/env bash
 
 REPOSITORY=/home/git
 PROJECT_NAME=simpleMarket
