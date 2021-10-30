@@ -14,6 +14,7 @@ spring:
   profiles:
     include: "dev"
 
+
 logging:
   level:
     me.silvernine: DEBUG
@@ -27,4 +28,20 @@ server:
       charset: UTF-8
       enabled: true
       force: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "real1"
+server:
+  port: 8081
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "real2"
+server:
+  port: 8082
 
