@@ -6,6 +6,10 @@ import org.springframework.mock.env.MockEnvironment;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * ProfileCOntroller나 Environment 모두 자바 클래스이기 때문에 쉽게 테스트 가능
+ * 생성자 DI로 인해 주입 가능  @Autowired 였으면  자바로만 테스트 불가능
+ */
 class ProfileControllerTest {
 
     @Test
