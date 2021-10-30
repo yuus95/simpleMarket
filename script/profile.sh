@@ -13,7 +13,7 @@ function find_idle_profile()
   then
     CURRENT_PROFILE=real2
   else
-    CURRENT_PROFILE= $(curl -s http://localhost/profile)
+    CURRENT_PROFILE= $(curl -s http://localhost/profile)find_idle_port
   fi
 
   if [ ${CURRENT_PROFIE} == real1 ]
@@ -29,7 +29,7 @@ function find_idle_profile()
 
 # 쉬고 있는 profile prot 찾기
 
-function find_idle_prot()
+function find_idle_port()
 {
   IDLE_PROFILE=$(find_idle_profile)
 
