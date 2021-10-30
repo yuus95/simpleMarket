@@ -12,4 +12,5 @@ public class ResponseDto<T> {
     private int code;
     private String message;
     private T data;
+
 }
