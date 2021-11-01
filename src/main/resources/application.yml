@@ -15,6 +15,7 @@ spring:
     group:
       "real1": "real1,dev"
       "real2": "real2,dev"
+    active: "dev"
 
 
 logging:
