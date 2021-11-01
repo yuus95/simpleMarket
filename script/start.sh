@@ -7,6 +7,7 @@ source ${ABSDIR}/profile.sh
 REPOSITORY=/home/git
 PROJECT_NAME=simpleMarket2
 
+
 echo "> Build 파일 복사"
 echo  "> $REPOSITORY/$PROJECT_NAME/build/libs/*.jar $REPOSITORY/dep2"
 cp $REPOSITORY/$PROJECT_NAME/*.jar $REPOSITORY/dep2
