@@ -21,6 +21,7 @@ before_deploy:
   - cp script/*.sh before-deploy # 배포 스크립트 이동
   - cp appspec.yml before-deploy # codedeploy파일 이동
   - cp build/libs/*.jar before-deploy
+  - cp src/main/resources/application-dev.yml before-deploy
   - cd before-deploy && zip -r before-deploy.zip * # zip 으로 압축
   - cd ../ && mkdir -p deploy
   - mv before-deploy/before-deploy.zip deploy/springboot-test.zip # deploy 폴더로 이동
