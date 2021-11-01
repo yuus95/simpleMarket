@@ -13,7 +13,9 @@ spring:
       maxRequestSize: 20MB
   profiles:
     include: "dev"
-
+    group:
+      "real1":"real1"
+      "real2":"real2"
 
 logging:
   level:
