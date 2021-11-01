@@ -17,6 +17,7 @@ spring:
       "real1": "real1"
       "real2": "real2"
 
+
 logging:
   level:
     me.silvernine: DEBUG
