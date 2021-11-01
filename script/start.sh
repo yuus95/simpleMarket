@@ -9,7 +9,7 @@ PROJECT_NAME=simpleMarket2
 
 echo "> Build 파일 복사"
 echo  "> $REPOSITORY/$PROJECT_NAME/build/libs/*.jar $REPOSITORY/dep2"
-cp $REPOSITORY/$PROJECT_NAME/build/libs/*.jar $REPOSITORY/dep2
+cp $REPOSITORY/$PROJECT_NAME/*.jar $REPOSITORY/dep2
 
 echo "> 새애플리케이션 배포"
 JAR_NAME=$(ls -tr $REPOSITORY/*.jar | tail -n 1)
