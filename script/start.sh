@@ -25,6 +25,7 @@ chmod +x $JAR_NAME
 IDLE_PROFILE=$(find_idle_profile)
 echo "> $JAR_NAME 를 profile=$IDLE_PROFILE 로 실행합니다."
 
+
 nohup java -jar \
     -Dspring.config.location=classpath:/application.yml,/home/git/simpleMarket2/application-dev.yml \
     -Dspring.profiles.active=$IDLE_PROFILE \
