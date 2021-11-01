@@ -12,10 +12,9 @@ spring:
       maxFileSize: 10MB
       maxRequestSize: 20MB
   profiles:
-    include: "dev"
     group:
-      "real1": "real1"
-      "real2": "real2"
+      "real1": "real1,dev"
+      "real2": "real2,dev"
 
 
 logging:
@@ -37,6 +36,7 @@ spring:
   config:
     activate:
       on-profile: "real1"
+
 server:
   port: 8081
 
@@ -45,6 +45,7 @@ spring:
   config:
     activate:
       on-profile: "real2"
+
 server:
   port: 8082
 
