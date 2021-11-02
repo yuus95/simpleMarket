@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
-ABSPATH=$(readlink -f $0)
-ABSDIR=$(dirname $ABSPATH)
-source ${ABSDIR}/profile.sh
+ABSPATH=$(readlink -f $0) # 현재파일의 위치 찾기
+ABSDIR=$(dirname $ABSPATH) #현재파일의 위치로 현대디렉토리명 가져오기
+source ${ABSDIR}/profile.sh # profile.sh의 명령어를 읽어서 실행시킨다.
 source ${ABSDIR}/switch.sh
 
-IDLE_PORT=$(find_idle_port)
+IDLE_PORT=$(find_idle_port) #profile.sh 의 find_idle_port 함수 실행
 
+
+# curl은 사용자 상호 작용 없이 작동하도록 설계된 서버에서 또는 서버로 데이터를 전송하기 위한 명령줄 유틸리티입니다.
 echo "> Health Check Start!"
 echo "> IDLE_PORT: $IDLE_PORT"
 echo "> curl -s http://localhost:$IDLE_PORT/profile "
